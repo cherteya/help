@@ -174,9 +174,9 @@
         }
 
         
-        .arg-nick { color: #ffb3c1; } /* Розовый для ников */
-        .arg-mod { color: var(--warm-star); } /* Золотой для модификаторов */
-        .arg-text { color: #a0c4ff; } /* Голубой для названий */
+        .arg-nick { color: #ffb3c1; } 
+        .arg-mod { color: var(--warm-star); } 
+        .arg-text { color: #a0c4ff; } 
 
         
         .back-btn {
@@ -253,7 +253,7 @@
                     
                     <div class="command-card">
                         <div class="cmd-name">Ручное добавление (в обход баллов)</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-nick">ник</span> <span class="arg-text">Название</span> <span class="arg-mod">(add)</span></div>
+                        <div class="cmd-syntax">!заказ <span class="arg-nick">@ник</span> <span class="arg-text">Название</span> <span class="arg-mod">(add)</span></div>
                         <div class="cmd-desc">
                             Добавляет заказ в очередь от имени указанного зрителя. 
                             <br><i>Алиасы: (заказ), (order), (add)</i>
@@ -263,7 +263,7 @@
                     
                     <div class="command-card">
                         <div class="cmd-name">Победа на аукционе</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-nick">ник</span> <span class="arg-text">Название</span> <span class="arg-mod">(аукцион)</span></div>
+                        <div class="cmd-syntax">!заказ <span class="arg-nick">@ник</span> <span class="arg-text">Название</span> <span class="arg-mod">(аукцион)</span></div>
                         <div class="cmd-desc">
                             Добавляет заказ со статусом <b>✦ Аукцион ✦</b>.
                             <br><i>Алиасы: (аукцион), (auction), (аук)</i>
@@ -311,7 +311,7 @@
                             Полностью и навсегда стирает заказ зрителя из базы.<br>
                             <i>Алиасы: (удалить), (delete), (del), (убрать)</i>
                             <br>Если не может найти фильм или игру
-							<br>то удаляем по нику + ID: <code>!заказ ник 12 (удалить)</code>
+							<br>то удаляем по нику + ID: <code>!заказ @ник 12 (удалить)</code>
                         </div>
                     </div>
 
