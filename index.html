@@ -30,12 +30,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            background-color: var(--bg-deep);
-            background-image: radial-gradient(circle at 50% 50%, var(--bg-sunset) 0%, var(--bg-deep) 100%), url('background.png');
+            background-color: #70e2a3;
+            background-image: url('background.webp');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-blend-mode: overlay;
             color: var(--text-main);
             font-family: var(--font-text);
             min-height: 100vh;
@@ -74,7 +73,7 @@
             position: relative; 
             z-index: 2; 
             border-radius: 18px;
-            padding: 40px 30px;
+            padding: 30px 30px;
         }
 
         
@@ -179,6 +178,7 @@
         .arg-text { color: #a0c4ff; } 
 
         
+        /* --- ИЗМЕНЕННАЯ КНОПКА ПО ЦЕНТРУ --- */
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -192,8 +192,8 @@
             font-family: var(--font-title);
             font-weight: 700;
             font-size: 16px;
-            margin-bottom: 30px;
             transition: all 0.3s ease;
+            margin-bottom: 25px; /* Добавили отступ снизу до заголовка */
         }
 
         .back-btn:hover {
@@ -201,7 +201,6 @@
             color: var(--bg-deep);
             box-shadow: 0 0 15px rgba(92, 242, 138, 0.5);
         }
-
         
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
@@ -226,16 +225,17 @@
 </head>
 <body>
 
-    
-    <a href="https://cherteya.github.io/lists/" class="back-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-        В Архивы
-    </a>
-
     <div class="container">
         <div class="content-wrapper">
             
             <div class="header-title">
+                
+                <!-- КНОПКА ТЕПЕРЬ ЗДЕСЬ - НАД ЗАГОЛОВКОМ И ПО ЦЕНТРУ -->
+                <a href="https://cherteya.github.io/lists/" class="back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    В Архивы
+                </a>
+
                 <h1>Книга Заклинаний</h1>
                 <p>Руководство по управлению</p>
             </div>
@@ -311,7 +311,7 @@
                             Полностью и навсегда стирает заказ зрителя из базы.<br>
                             <i>Алиасы: (удалить), (delete), (del), (убрать)</i>
                             <br>Если не может найти фильм или игру
-							<br>то удаляем по нику + ID: <code>!заказ @ник 12 (удалить)</code>
+                            <br>то удаляем по нику + ID: <code>!заказ @ник 12 (удалить)</code>
                         </div>
                     </div>
 
