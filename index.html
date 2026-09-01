@@ -139,7 +139,7 @@
         .note-icon { color: var(--mint-main); }
         .delete-icon { color: #ff5c5c; }
 
-        /* ======== МОБИЛЬНАЯ АДАПТАЦИЯ ======== */
+        
         @media (max-width: 768px) {
             body { 
                 padding: 10px 5px; 
@@ -251,10 +251,10 @@
                         <div class="cmd-name">Ручное добавление (add)</div>
                         <div class="cmd-desc">Добавить фильм от имени зрителя в обход баллов канала! Указываем <span class="highlight-nick">@ник</span>! Если фильмов с таким названием несколько, <b>обязательно дописываем год</b>!</div>
                         <div class="example-box">
-<span class="comment">Обычное добавление:</span>
-!fz @Зритель Шрек (add)<br><br>
-<span class="comment">С указанием года (при совпадениях):</span>
-!fz @Зритель Шрек 2001 (add)
+							<span class="comment">Обычное добавление:</span>
+							!fz @Зритель Шрек (add)<br><br>
+							<span class="comment">С указанием года (при совпадениях):</span>
+							!fz @Зритель Шрек 2001 (add)
                         </div>
                         <div class="cmd-aliases">Алиасы: (заказ, добавить, доб, order, add)</div>
                     </div>
@@ -263,10 +263,10 @@
                         <div class="cmd-name">Победа на Аукционе</div>
                         <div class="cmd-desc">Добавляет фильм в базу с особой пометкой ✦ Аукцион ✦! Если названий несколько, также обязательно дописываем год! <br><br><span class="note-icon">🔄</span> <i>Повторный ввод отменит статус аукциона!</i></div>
                         <div class="example-box">
-<span class="comment">Обычное добавление:</span>
-!fz @Зритель Бойцовский клуб (аукцион)<br><br>
-<span class="comment">С указанием года:</span>
-!fz @Зритель Солярис 1972 (аукцион)
+							<span class="comment">Обычное добавление:</span>
+							!fz @Зритель Бойцовский клуб (аукцион)<br><br>
+							<span class="comment">С указанием года:</span>
+							!fz @Зритель Солярис 1972 (аукцион)
                         </div>
                         <div class="cmd-aliases">Алиасы: (аукцион, auction, аук)</div>
                     </div>
@@ -279,8 +279,8 @@
                         <div class="cmd-name">Статус: В процессе</div>
                         <div class="cmd-desc">Устанавливает статус фильма на «Смотрим».</div>
                         <div class="example-box">
-<span class="comment">Пример команды:</span>
-!fz Шрек (смотрим)
+							<span class="comment">Пример команды:</span>
+							!fz Шрек (смотрим)
                         </div>
                         <div class="cmd-aliases">Алиасы: (смотрим, watching)</div>
                     </div>
@@ -289,8 +289,8 @@
                         <div class="cmd-name">Статус: Просмотрено (Без оценки)</div>
                         <div class="cmd-desc">Закрывает заказ и переносит в архив. Если ввести еще раз — вернет в очередь.</div>
                         <div class="example-box">
-<span class="comment">Пример команды:</span>
-!fz Шрек (смотрели)
+							<span class="comment">Пример команды:</span>
+							!fz Шрек (смотрели)
                         </div>
                         <div class="cmd-aliases">Алиасы: (смотрели, watched, смотрел, смотрела)</div>
                     </div>
@@ -299,10 +299,10 @@
                         <div class="cmd-name">Статус: Оценка и Золото</div>
                         <div class="cmd-desc">Закрывает заказ с выставлением оценки (цифрами). Оценка <b>(1000)</b> выдает Золотой Статус.</div>
                         <div class="example-box">
-<span class="comment">Обычная оценка:</span>
-!fz Шрек (8.5)<br><br>
-<span class="comment">Золотой статус:</span>
-!fz Шрек (1000)
+							<span class="comment">Обычная оценка:</span>
+							!fz Шрек (8.5)<br><br>
+							<span class="comment">Золотой статус:</span>
+							!fz Шрек (1000)
                         </div>
                     </div>
                 </div>
@@ -314,8 +314,8 @@
                         <div class="cmd-name">Добавить Постер</div>
                         <div class="cmd-desc">Привязывает свою картинку/обложку к заказу. Ссылка пишется внутри скобок через пробел. <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(постер)</b> без ссылки, свой постер будет удален!</i></div>
                         <div class="example-box">
-<span class="comment">Пример команды:</span>
-!fz Шрек (постер https://ссылка.jpg)
+							<span class="comment">Пример команды:</span>
+							!fz Шрек (постер https://ссылка.jpg)
                         </div>
                         <div class="cmd-aliases">Алиасы: (постер, poster, картинка, обложка)</div>
                     </div>
@@ -324,8 +324,8 @@
                         <div class="cmd-name">Добавить пост Telegram</div>
                         <div class="cmd-desc">Привязывает пост с отзывом/анонсом в вашем ТГ. <b>Указываем только номер поста</b>, не ссылку! <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(тг)</b> без номера, привязка поста будет удалена!</i></div>
                         <div class="example-box">
-<span class="comment">Пример (если ссылка t.me/канал/122):</span>
-!fz Шрек (тг 122)
+							<span class="comment">Пример (если ссылка t.me/канал/122):</span>
+							!fz Шрек (тг 122)
                         </div>
                         <div class="cmd-aliases">Алиасы: (пост, post, tg, тг)</div>
                     </div>
@@ -334,10 +334,10 @@
                         <div class="cmd-name">Привязка Кинопоиска (Для кнопки)</div>
                         <div class="cmd-desc">Добавляет на сайт кнопку «Смотреть онлайн», если она не появилась. Можно указать ID или полную ссылку.</div>
                         <div class="example-box">
-<span class="comment">По ID Кинопоиска:</span>
-!fz Шрек (кп 430)<br><br>
-<span class="comment">По ссылке:</span>
-!fz Шрек (кп https://www.kinopoisk.ru/...)
+							<span class="comment">По ID Кинопоиска:</span>
+							!fz Шрек (кп 430)<br><br>
+							<span class="comment">По ссылке:</span>
+							!fz Шрек (кп https://www.kinopoisk.ru/...)
                         </div>
                         <div class="cmd-aliases">Алиасы: (кинопоиск, kinopoisk, kp, кп)</div>
                     </div>
@@ -346,8 +346,8 @@
                         <div class="cmd-name">Включить/Выключить «Смотреть онлайн»</div>
                         <div class="cmd-desc">Команда, которая переключает отображение кнопок «Смотреть онлайн» для зрителей на сайте.</div>
                         <div class="example-box">
-<span class="comment">Переключатель:</span>
-!fz (онлайн)
+							<span class="comment">Переключатель:</span>
+							!fz (онлайн)
                         </div>
                         <div class="cmd-aliases">Алиасы: (online, онлайн)</div>
                     </div>
@@ -418,12 +418,12 @@
                         <div class="cmd-name">Ручное добавление (add)</div>
                         <div class="cmd-desc">Модератор добавляет игру в обход баллов канала. Обязательно указываем <span class="highlight-nick">@ник</span>. Игру можно добавить тремя способами: названием, ссылкой на Steam или Steam ID.</div>
                         <div class="example-box">
-<span class="comment">Названием:</span>
-!gz @Зритель Portal (add)<br><br>
-<span class="comment">Ссылкой на Steam:</span>
-!gz @Зритель https://store.steampowered.com/app/400/ (add)<br><br>
-<span class="comment">По Steam ID:</span>
-!gz @Зритель steam400 (add)
+							<span class="comment">Названием:</span>
+							!gz @Зритель Portal (add)<br><br>
+							<span class="comment">Ссылкой на Steam:</span>
+							!gz @Зритель https://store.steampowered.com/app/400/ (add)<br><br>
+							<span class="comment">По Steam ID:</span>
+							!gz @Зритель steam400 (add)
                         </div>
                         <div class="cmd-aliases">Алиасы: (заказ, добавить, доб, order, add)</div>
                     </div>
@@ -432,12 +432,12 @@
                         <div class="cmd-name">Победа на Аукционе</div>
                         <div class="cmd-desc">Добавляет игру в базу со статусом победителя ✦ Аукцион ✦. Обязательно указываем <span class="highlight-nick">@ник</span>. Поддерживает название, ссылку и Steam ID. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод отменит статус аукциона.</i></div>
                         <div class="example-box">
-<span class="comment">Названием:</span>
-!gz @Зритель Dark Souls (аукцион)<br><br>
-<span class="comment">Ссылкой на Steam:</span>
-!gz @Зритель https://store.steampowered.com/app/374320/ (аукцион)<br><br>
-<span class="comment">По Steam ID:</span>
-!gz @Зритель steam374320 (аукцион)
+							<span class="comment">Названием:</span>
+							!gz @Зритель Dark Souls (аукцион)<br><br>
+							<span class="comment">Ссылкой на Steam:</span>
+							!gz @Зритель https://store.steampowered.com/app/374320/ (аукцион)<br><br>
+							<span class="comment">По Steam ID:</span>
+							!gz @Зритель steam374320 (аукцион)
                         </div>
                         <div class="cmd-aliases">Алиасы: (аукцион, auction, аук)</div>
                     </div>
@@ -532,12 +532,12 @@
                         <div class="cmd-name">Форматы Редактирования (Название, Ссылка, ID)</div>
                         <div class="cmd-desc">Любую игру можно редактировать (менять статус, добавлять постер/тг) тремя способами: по названию, по ссылке на Steam или по Steam ID. ID пишется слитно с префиксом.</div>
                         <div class="example-box">
-<span class="comment">По названию:</span>
-!gz Portal (постер https://...)<br><br>
-<span class="comment">По ссылке:</span>
-!gz https://store.steampowered.com/app/400/ (постер https://...)<br><br>
-<span class="comment">По Steam ID:</span>
-!gz steam400 (постер https://...)
+							<span class="comment">По названию:</span>
+							!gz Portal (постер https://...)<br><br>
+							<span class="comment">По ссылке:</span>
+							!gz https://store.steampowered.com/app/400/ (постер https://...)<br><br>
+							<span class="comment">По Steam ID:</span>
+							!gz steam400 (постер https://...)
                         </div>
                         <div class="cmd-aliases">Префиксы для ID: steam, id, стим (например: id400)</div>
                     </div>
@@ -546,12 +546,12 @@
                         <div class="cmd-desc">Заново стянуть обложку и данные по игре из базы.</div>
                         
                         <div class="example-box">
-<span class="comment">По названию:</span>
-!gz Portal (data)<br><br>
-<span class="comment">По ссылке:</span>
-!gz https://store.steampowered.com/app/400/ (data)<br><br>
-<span class="comment">По Steam ID:</span>
-!gz steam400 (data)
+							<span class="comment">По названию:</span>
+							!gz Portal (data)<br><br>
+							<span class="comment">По ссылке:</span>
+							!gz https://store.steampowered.com/app/400/ (data)<br><br>
+							<span class="comment">По Steam ID:</span>
+							!gz steam400 (data)
                         </div>
                         
                         <div class="cmd-aliases">Алиасы: (data, дата, обновитьигру)</div>
@@ -568,8 +568,8 @@
                         <div class="cmd-name">Полное Удаление (По названию)</div>
                         <div class="cmd-desc">Навсегда удаляет заказ из базы. Подходит для !fz и !gz.</div>
                         <div class="example-box">
-<span class="comment">Пример команды:</span>
-!fz Плохой Фильм (удалить)
+							<span class="comment">Пример команды:</span>
+							!fz Плохой Фильм (удалить)
                         </div>
                         <div class="cmd-aliases">Алиасы: (удалить, delete, del, убрать, отмена)</div>
                     </div>
@@ -578,8 +578,8 @@
                         <div class="cmd-name">Удаление (По нику + ID)</div>
                         <div class="cmd-desc">Если бот не может найти название, используйте ник зрителя и ID заказа.</div>
                         <div class="example-box">
-<span class="comment">Пример команды:</span>
-!fz @Зритель 12 (удалить)
+							<span class="comment">Пример команды:</span>
+							!fz @Зритель 12 (удалить)
                         </div>
                     </div>
 
@@ -587,8 +587,8 @@
                         <div class="cmd-name">Замена заказа</div>
                         <div class="cmd-desc">Заменяет текущий заказ на другой. Новое название строго в <span class="highlight">[квадратных]</span> скобках.</div>
                         <div class="example-box">
-<span class="comment">Пример команды:</span>
-!fz Старый Фильм [Новый Фильм]
+							<span class="comment">Пример команды:</span>
+							!fz Старый Фильм [Новый Фильм]
                         </div>
                     </div>
 
@@ -596,8 +596,8 @@
                         <div class="cmd-name">Принудительное обновление сайта</div>
                         <div class="cmd-desc">Если сайт завис и не обновился, эта команда отправляет всю базу на сервер заново.</div>
                         <div class="example-box">
-<span class="comment">Пример команды:</span>
-!fz (обновить)
+							<span class="comment">Пример команды:</span>
+							!fz (обновить)
                         </div>
                         <div class="cmd-aliases">Алиасы: (обновить, update, refresh, обн, ref)</div>
                     </div>
