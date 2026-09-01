@@ -7,27 +7,19 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700;900&family=Nunito:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
     <style>
-        
         :root {
             --bg-deep: #130f1c;         
-            --bg-sunset: #38255c;       
-            --bg-velvet: #221836;       
-            
             --mint-light: #d1fce0;      
             --mint-main: #5cf28a;       
             --mint-dark: #278c47;       
-            
             --warm-star: #fce8a1;       
-            --cute-pink: #ff8fa3;       
-            
             --text-main: #f0edf5;       
             --text-muted: #b5adc4;      
-            
             --font-title: 'Comfortaa', cursive;
             --font-text: 'Nunito', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         
         body {
             background-color: #70e2a3;
@@ -45,10 +37,9 @@
             overflow-x: hidden;
         }
 
-        
         .container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1300px;
             background: rgba(19, 15, 28, 0.85); 
             backdrop-filter: blur(12px); 
             -webkit-backdrop-filter: blur(12px);
@@ -57,7 +48,6 @@
             border: 2px solid var(--mint-dark);
             border-radius: 24px;
             padding: 6px; 
-            animation: fadeInUp 1s ease forwards;
         }
 
         .container::before {
@@ -73,62 +63,48 @@
             position: relative; 
             z-index: 2; 
             border-radius: 18px;
-            padding: 30px 30px;
+            padding: 40px 30px;
         }
-
         
-        .header-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+        .header-title { text-align: center; margin-bottom: 30px; }
+        .header-title h1 { font-family: var(--font-title); font-size: 46px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 4px 10px rgba(0,0,0,0.6), 0 0 20px rgba(92, 242, 138, 0.4); margin-bottom: 10px; }
+        .header-title p { font-size: 18px; color: var(--mint-light); font-weight: 600; opacity: 0.9; }
 
-        .header-title h1 {
-            font-family: var(--font-title);
-            font-size: 46px;
-            font-weight: 900;
-            color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.6), 0 0 20px rgba(92, 242, 138, 0.4);
-            margin-bottom: 10px;
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(92, 242, 138, 0.1); color: var(--mint-main);
+            text-decoration: none; padding: 10px 25px; border-radius: 20px;
+            border: 1px solid rgba(92, 242, 138, 0.3); font-family: var(--font-title);
+            font-weight: 700; font-size: 16px; transition: all 0.3s ease; margin-bottom: 25px; 
         }
+        .back-btn:hover { background: var(--mint-main); color: var(--bg-deep); box-shadow: 0 0 15px rgba(92, 242, 138, 0.5); }
 
-        .header-title p {
-            font-size: 18px;
-            color: var(--mint-light);
-            font-weight: 600;
-            opacity: 0.9;
-        }
+        .nav-anchors { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        .nav-anchors a { background: rgba(19, 15, 28, 0.6); color: var(--text-main); text-decoration: none; padding: 12px 25px; border-radius: 12px; border: 1px solid var(--mint-dark); font-family: var(--font-title); font-weight: 700; transition: all 0.3s ease; }
+        .nav-anchors a:hover { background: var(--mint-dark); color: #fff; transform: translateY(-2px); }
 
-        
-        .section {
-            margin-bottom: 50px;
-        }
+        .section { margin-bottom: 70px; scroll-margin-top: 40px; }
+        .section-title { font-family: var(--font-title); font-size: 32px; font-weight: 800; color: var(--mint-main); margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid rgba(92, 242, 138, 0.2); }
+        .subsection-title { font-family: var(--font-title); font-size: 22px; color: var(--warm-star); margin-bottom: 15px; margin-top: 30px; }
 
-        .section-title {
-            font-family: var(--font-title);
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--mint-main);
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(92, 242, 138, 0.2);
+        .info-box {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: var(--warm-star);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.5;
             display: flex;
-            align-items: center;
             gap: 15px;
+            align-items: center;
         }
 
-        
         .command-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 20px;
-        }
-
-        @media (min-width: 768px) {
-            .command-grid.two-cols {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         .command-card {
@@ -138,89 +114,30 @@
             padding: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
         }
+        .command-card:hover { border-color: var(--mint-main); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 15px rgba(92, 242, 138, 0.2); }
 
-        .command-card:hover {
-            border-color: var(--mint-main);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 15px rgba(92, 242, 138, 0.2);
-        }
-
-        .cmd-name {
-            font-family: var(--font-title);
-            font-size: 18px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .cmd-syntax {
+        .cmd-name { font-family: var(--font-title); font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .cmd-desc { font-size: 14px; line-height: 1.5; color: var(--text-muted); margin-bottom: 15px; flex-grow: 1; }
+        .cmd-aliases { font-size: 12px; color: #887d9c; background: rgba(0,0,0,0.3); padding: 8px; border-radius: 8px; margin-top: 10px; }
+        
+        .example-box {
             background: rgba(0, 0, 0, 0.5);
-            color: var(--mint-main);
-            padding: 10px 15px;
+            padding: 12px;
             border-radius: 8px;
             font-family: monospace;
-            font-size: 15px;
-            margin-bottom: 12px;
-            border-left: 3px solid var(--mint-main);
+            font-size: 14px;
+            border-left: 4px solid var(--mint-main);
             word-wrap: break-word;
+            color: #a0c4ff;
         }
-
-        .cmd-desc {
-            font-size: 15px;
-            line-height: 1.5;
-            color: var(--text-muted);
-        }
-
-        
-        .arg-nick { color: #ffb3c1; } 
-        .arg-mod { color: var(--warm-star); } 
-        .arg-text { color: #a0c4ff; } 
-
-        
-       
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(92, 242, 138, 0.1);
-            color: var(--mint-main);
-            text-decoration: none;
-            padding: 10px 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(92, 242, 138, 0.3);
-            font-family: var(--font-title);
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            margin-bottom: 25px; 
-        }
-
-        .back-btn:hover {
-            background: var(--mint-main);
-            color: var(--bg-deep);
-            box-shadow: 0 0 15px rgba(92, 242, 138, 0.5);
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        
-        .info-box {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            color: var(--warm-star);
-            padding: 15px 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            font-size: 15px;
-            line-height: 1.5;
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
+        .example-box span.comment { color: var(--mint-main); font-size: 12px; display: block; margin-bottom: 5px; font-family: var(--font-text); }
+        .highlight { color: var(--warm-star); font-weight: bold; }
+        .highlight-nick { color: #ffb3c1; font-weight: bold; }
+        .note-icon { color: var(--mint-main); }
+        .delete-icon { color: #ff5c5c; }
     </style>
 </head>
 <body>
@@ -229,110 +146,383 @@
         <div class="content-wrapper">
             
             <div class="header-title">
-                
-                
                 <a href="https://cherteya.github.io/lists/" class="back-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
                     В Архивы
                 </a>
+                <h1>Инструкция</h1>
+            </div>
 
-                <h1>Книга Заклинаний</h1>
-                <p>Руководство по управлению</p>
+            <div class="nav-anchors">
+                <a href="#movies">🎬 КИНО (!filmzakaz)</a>
+                <a href="#games">🎮 ИГРЫ (!gamezakaz)</a>
+                <a href="#system">🛠 СИСТЕМНЫЕ</a>
             </div>
 
             
-            <div class="section">
-                <h2 class="section-title">👑 Для Стримера и Модераторов</h2>
-                
+            <div id="movies" class="section">
+                <h2 class="section-title">🎬 Раздел Кино, Мультфильмы, Аниме и Сериалы (!filmzakaz, !fz)</h2>
+
                 <div class="info-box">
-                    <div>Главная команда в примерах: <code>!заказ</code> (подставьте свою: !filmzakaz, !fz, !gamezakaz, !gz и т.д.).</div>
+                    <div>⚠️ <b>Важно:</b> Добавлять фильмы могут <b>только модераторы</b> и строго с указанием <span class="highlight-nick">@ника</span> заказчика!</div>
                 </div>
 
-                <div class="command-grid two-cols">
-                    
+                <h3 class="subsection-title">1. Добавление в очередь</h3>
+                <div class="command-grid">
+
+                    <div class="command-card">
+                        <div class="cmd-name">Ручное добавление (add)</div>
+                        <div class="cmd-desc">Добавить фильм от имени зрителя в обход баллов канала! Указываем <span class="highlight-nick">@ник</span>! Если фильмов с таким названием несколько, <b>обязательно дописываем год</b>!</div>
+                        <div class="example-box">
+                            <span class="comment">Обычное добавление:</span>
+                            !fz @Зритель Шрек (add)<br><br>
+                            <span class="comment">С указанием года (при совпадениях):</span>
+                            !fz @Зритель Шрек 2001 (add)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (заказ, добавить, доб, order, add)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Победа на Аукционе</div>
+                        <div class="cmd-desc">Добавляет фильм в базу с особой пометкой ✦ Аукцион ✦! Если названий несколько, также обязательно дописываем год! <br><br><span class="note-icon">🔄</span> <i>Повторный ввод отменит статус аукциона!</i></div>
+                        <div class="example-box">
+                            <span class="comment">Обычное добавление:</span>
+                            !fz @Зритель Бойцовский клуб (аукцион)<br><br>
+                            <span class="comment">С указанием года:</span>
+                            !fz @Зритель Солярис 1972 (аукцион)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (аукцион, auction, аук)</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">2. Управление Статусами</h3>
+                <div class="command-grid">
                     
                     <div class="command-card">
-                        <div class="cmd-name">Ручное добавление (в обход баллов)</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-nick">@ник</span> <span class="arg-text">Название</span> <span class="arg-mod">(add)</span></div>
-                        <div class="cmd-desc">
-                            Добавляет заказ в очередь от имени указанного зрителя. 
-                            <br><i>Алиасы: (заказ), (order), (add)</i>
+                        <div class="cmd-name">Статус: В процессе</div>
+                        <div class="cmd-desc">Устанавливает статус фильма на «Смотрим».</div>
+                        <div class="example-box">
+                            <span class="comment">Пример команды:</span>
+                            !fz Шрек (смотрим)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (смотрим, watching)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Статус: Просмотрено (Без оценки)</div>
+                        <div class="cmd-desc">Закрывает заказ и переносит в архив. Если ввести еще раз — вернет в очередь.</div>
+                        <div class="example-box">
+                            <span class="comment">Пример команды:</span>
+                            !fz Шрек (смотрели)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (смотрели, watched, смотрел, смотрела)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Статус: Оценка и Золото</div>
+                        <div class="cmd-desc">Закрывает заказ с выставлением оценки (цифрами). Оценка <b>(1000)</b> выдает Золотой Статус.</div>
+                        <div class="example-box">
+                            <span class="comment">Обычная оценка:</span>
+                            !fz Шрек (8.5)<br><br>
+                            <span class="comment">Золотой статус:</span>
+                            !fz Шрек (1000)
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">3. Прикрепление Медиа и Ссылок</h3>
+                <div class="command-grid">
+                    
+                    <div class="command-card">
+                        <div class="cmd-name">Добавить Постер</div>
+                        <div class="cmd-desc">Привязывает свою картинку/обложку к заказу. Ссылка пишется внутри скобок через пробел. <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(постер)</b> без ссылки, свой постер будет удален!</i></div>
+                        <div class="example-box">
+                            <span class="comment">Пример команды:</span>
+                            !fz Шрек (постер https://ссылка.jpg)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (постер, poster, картинка, обложка)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Добавить пост Telegram</div>
+                        <div class="cmd-desc">Привязывает пост с отзывом/анонсом в вашем ТГ. <b>Указываем только номер поста</b>, не ссылку! <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(тг)</b> без номера, привязка поста будет удалена!</i></div>
+                        <div class="example-box">
+                            <span class="comment">Пример (если ссылка t.me/канал/122):</span>
+                            !fz Шрек (тг 122)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (пост, post, tg, тг)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Привязка Кинопоиска (Для кнопки)</div>
+                        <div class="cmd-desc">Добавляет на сайт кнопку «Смотреть онлайн», если она не появилась. Можно указать ID или полную ссылку.</div>
+                        <div class="example-box">
+                            <span class="comment">По ID Кинопоиска:</span>
+                            !fz Шрек (кп 430)<br><br>
+                            <span class="comment">По ссылке:</span>
+                            !fz Шрек (кп https://www.kinopoisk.ru/...)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (кинопоиск, kinopoisk, kp, кп)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Включить/Выключить «Смотреть онлайн»</div>
+                        <div class="cmd-desc">Команда, которая переключает отображение кнопок «Смотреть онлайн» для зрителей на сайте.</div>
+                        <div class="example-box">
+                            <span class="comment">Переключатель:</span>
+                            !fz (онлайн)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (online, онлайн)</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">4. Теги и Метки (Можно комбинировать)</h3>
+                <div class="command-grid">
+                    
+                    <div class="command-card">
+                        <div class="cmd-name">Метка: Слёзы 💧</div>
+                        <div class="cmd-desc">Добавляет плачущий смайл для эмоционального кино. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод уберет метку.</i></div>
+                        <div class="example-box">!fz Хатико (слезы)</div>
+                        <div class="cmd-aliases">Алиасы: (плакал, плакали, слезы, слёзы, cry)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Метка: Марвел 🦸‍♂️</div>
+                        <div class="cmd-desc">Особая пометка. <b>Добавляется автоматически</b>, если у фильма указана студия Marvel. Вручную можно поставить на любой фильм. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод уберет метку.</i></div>
+                        <div class="example-box">!fz Железный человек (марвел)</div>
+                        <div class="cmd-aliases">Алиасы: (марвел, marvel)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Метка: Тематическая неделя 🎭</div>
+                        <div class="cmd-desc">Отмечает фильм, если он заказан в рамках ивента. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод уберет метку.</i></div>
+                        <div class="example-box">!fz Сияние (тема)</div>
+                        <div class="cmd-aliases">Алиасы: (тема, тематическая неделя, theme)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Метка: Сезон 📺</div>
+                        <div class="cmd-desc">Указание конкретного сезона сериала. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод уберет метку.</i></div>
+                        <div class="example-box">!fz Во все тяжкие (сезон 2)</div>
+                        <div class="cmd-aliases">Алиасы: (сезон, season, s, с)</div>
+                    </div>
+                    
+                    <div class="command-card">
+                        <div class="cmd-name">Метка: Бан на платформе 🚫</div>
+                        <div class="cmd-desc">Отметка фильмов, за которые мы получили бан на Twitch. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод уберет метку.</i></div>
+                        <div class="example-box">!fz Запрещенный фильм (бан)</div>
+                        <div class="cmd-aliases">Алиасы: (бан, ban)</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">5. Технические Команды Кино</h3>
+                <div class="command-grid">
+                    <div class="command-card">
+                        <div class="cmd-name">Обновление данных фильма</div>
+                        <div class="cmd-desc">Заставляет бота заново стянуть обложку и инфу из интернета для конкретного фильма.</div>
+                        <div class="example-box">!fz Шрек (data)</div>
+                        <div class="cmd-aliases">Алиасы: (data, дата, обновитьфильм)</div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="games" class="section">
+                <h2 class="section-title">🎮 Раздел Игр (!gamezakaz, !gz)</h2>
+
+                <div class="info-box">
+                    <div>⚠️ <b>Важно:</b> При добавлении и редактировании игр <b>всегда</b> можно использовать один из трех вариантов: <b>Название</b>, <b>Прямую ссылку на Steam</b> или <b>Steam ID</b>. При добавлении обязательно указывайте <span class="highlight-nick">@ник</span> заказчика.</div>
+                </div>
+
+                <h3 class="subsection-title">1. Добавление в очередь</h3>
+                <div class="command-grid">
+
+                    <div class="command-card">
+                        <div class="cmd-name">Ручное добавление (add)</div>
+                        <div class="cmd-desc">Модератор добавляет игру в обход баллов канала. Обязательно указываем <span class="highlight-nick">@ник</span>. Игру можно добавить тремя способами: названием, ссылкой на Steam или Steam ID.</div>
+                        <div class="example-box">
+                            <span class="comment">Названием:</span>
+                            !gz @Зритель Portal (add)<br><br>
+                            <span class="comment">Ссылкой на Steam:</span>
+                            !gz @Зритель https://store.steampowered.com/app/400/ (add)<br><br>
+                            <span class="comment">По Steam ID:</span>
+                            !gz @Зритель steam400 (add)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (заказ, добавить, доб, order, add)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Победа на Аукционе</div>
+                        <div class="cmd-desc">Добавляет игру в базу со статусом победителя ✦ Аукцион ✦. Обязательно указываем <span class="highlight-nick">@ник</span>. Поддерживает название, ссылку и Steam ID. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод отменит статус аукциона.</i></div>
+                        <div class="example-box">
+                            <span class="comment">Названием:</span>
+                            !gz @Зритель Dark Souls (аукцион)<br><br>
+                            <span class="comment">Ссылкой на Steam:</span>
+                            !gz @Зритель https://store.steampowered.com/app/374320/ (аукцион)<br><br>
+                            <span class="comment">По Steam ID:</span>
+                            !gz @Зритель steam374320 (аукцион)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (аукцион, auction, аук)</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">2. Управление Статусами Прохождения</h3>
+                <div class="command-grid">
+                    
+                    <div class="command-card">
+                        <div class="cmd-name">Статус: В процессе</div>
+                        <div class="cmd-desc">Стример начал прохождение игры.</div>
+                        <div class="example-box">!gz Portal (играем)</div>
+                        <div class="cmd-aliases">Алиасы: (играем, играю, playing, play, начал, начала, старт, start)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Статус: Пройдено</div>
+                        <div class="cmd-desc">Игра полностью завершена (закрыта).</div>
+                        <div class="example-box">!gz Portal (пройдено)</div>
+                        <div class="cmd-aliases">Алиасы: (пройдено, прошел, прошла, complete, прошли, прошёл)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Статус: Дропнуто 🗑️</div>
+                        <div class="cmd-desc">Стримеру не понравилось, игра заброшена.</div>
+                        <div class="example-box">!gz Dota 2 (брошен)</div>
+                        <div class="cmd-aliases">Алиасы: (бросила, бросил, бросили, дроп, drop, брошен)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Статус: Пробник (Try)</div>
+                        <div class="cmd-desc">Игра взята на короткий тест/стрим без обязательств.</div>
+                        <div class="example-box">!gz Инди-игра (пробник)</div>
+                        <div class="cmd-aliases">Алиасы: (попробовала, попробовал, try, пробник)</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">3. Уровень Сложности</h3>
+                <div class="command-grid">
+                    <div class="command-card">
+                        <div class="cmd-name">Сложность: Лёгкая 🟢</div>
+                        <div class="example-box">!gz Майнкрафт (изи)</div>
+                        <div class="cmd-aliases">Алиасы: (легкая, изи, easy)</div>
+                    </div>
+                    <div class="command-card">
+                        <div class="cmd-name">Сложность: Средняя 🟡</div>
+                        <div class="example-box">!gz Ведьмак 3 (средняя)</div>
+                        <div class="cmd-aliases">Алиасы: (средняя, мид, medium)</div>
+                    </div>
+                    <div class="command-card">
+                        <div class="cmd-name">Сложность: Сложная 🔴</div>
+                        <div class="example-box">!gz Sekiro (хард)</div>
+                        <div class="cmd-aliases">Алиасы: (сложная, хард, hard)</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">4. Эмоции и Прикрепление Медиа</h3>
+                <div class="command-grid">
+                    
+                    <div class="command-card">
+                        <div class="cmd-name">Эмоция: Слёзы 💧</div>
+                        <div class="cmd-desc">Игра растрогала до слез. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод уберет метку.</i></div>
+                        <div class="example-box">!gz To the Moon (слезы)</div>
+                        <div class="cmd-aliases">Алиасы: (плакал, плакали, слезы, слёзы, cry)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Эмоция: Горение 🔥</div>
+                        <div class="cmd-desc">Жесткий рейдж и подгорание. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод уберет метку.</i></div>
+                        <div class="example-box">!gz Getting Over It (горение)</div>
+                        <div class="cmd-aliases">Алиасы: (сгорела, сгорели, горение, сгорел, fire, rage)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Добавить Постер</div>
+                        <div class="cmd-desc">Привязка обложки игры. Ссылка пишется внутри скобок через пробел. <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(постер)</b> без ссылки, свой постер будет удален!</i></div>
+                        <div class="example-box">!gz Portal (постер https://ссылка.jpg)</div>
+                        <div class="cmd-aliases">Алиасы: (постер, poster, картинка, обложка)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Добавить пост Telegram</div>
+                        <div class="cmd-desc">Привязка поста с анонсом. <b>Указываем только номер поста</b>. <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(тг)</b> без номера, привязка поста будет удалена!</i></div>
+                        <div class="example-box">!gz Portal (тг 122)</div>
+                        <div class="cmd-aliases">Алиасы: (пост, post, tg, тг)</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">5. Технические Команды Игр</h3>
+                <div class="command-grid">
+                    <div class="command-card">
+                        <div class="cmd-name">Форматы Редактирования (Название, Ссылка, ID)</div>
+                        <div class="cmd-desc">Любую игру можно редактировать (менять статус, добавлять постер/тг) тремя способами: по названию, по ссылке на Steam или по Steam ID. ID пишется слитно с префиксом.</div>
+                        <div class="example-box">
+                            <span class="comment">По названию:</span>
+                            !gz Portal (постер https://...)<br><br>
+                            <span class="comment">По ссылке:</span>
+                            !gz https://store.steampowered.com/app/400/ (постер https://...)<br><br>
+                            <span class="comment">По Steam ID:</span>
+                            !gz steam400 (постер https://...)
+                        </div>
+                        <div class="cmd-aliases">Префиксы для ID: steam, id, стим (например: id400)</div>
+                    </div>
+                    <div class="command-card">
+                        <div class="cmd-name">Обновление данных игры</div>
+                        <div class="cmd-desc">Заново стянуть обложку и данные по игре из базы.</div>
+						
+						<div class="example-box">
+                            <span class="comment">По названию:</span>
+                            !gz Portal (data)<br><br>
+                            <span class="comment">По ссылке:</span>
+                            !gz https://store.steampowered.com/app/400/ (data)<br><br>
+                            <span class="comment">По Steam ID:</span>
+                            !gz steam400 (data)
+                        </div>
+						
+                        <div class="cmd-aliases">Алиасы: (data, дата, обновитьигру)</div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div id="system" class="section">
+                <h2 class="section-title">🛠 Системная Магия (Общие Команды)</h2>
+                <div class="command-grid">
+                    
+                    <div class="command-card">
+                        <div class="cmd-name">Полное Удаление (По названию)</div>
+                        <div class="cmd-desc">Навсегда удаляет заказ из базы. Подходит для !fz и !gz.</div>
+                        <div class="example-box">
+                            <span class="comment">Пример команды:</span>
+                            !fz Плохой Фильм (удалить)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (удалить, delete, del, убрать, отмена)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Удаление (По нику + ID)</div>
+                        <div class="cmd-desc">Если бот не может найти название, используйте ник зрителя и ID заказа.</div>
+                        <div class="example-box">
+                            <span class="comment">Пример команды:</span>
+                            !fz @Зритель 12 (удалить)
                         </div>
                     </div>
 
-                    
-                    <div class="command-card">
-                        <div class="cmd-name">Победа на аукционе</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-nick">@ник</span> <span class="arg-text">Название</span> <span class="arg-mod">(аукцион)</span></div>
-                        <div class="cmd-desc">
-                            Добавляет заказ со статусом <b>✦ Аукцион ✦</b>.
-                            <br><i>Алиасы: (аукцион), (auction), (аук)</i>
-                        </div>
-                    </div>
-
-                    
-                    <div class="command-card">
-                        <div class="cmd-name">Пройдено / Посмотрели с оценкой</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-text">Название</span> <span class="arg-mod">(8.5)</span></div>
-                        <div class="cmd-desc">
-                            Закрывает заказ и выставляет вашу оценку (от <b>0</b> до <b>10</b>). Поддерживаются точки и запятые.<br>
-                            🔥 <i>Секрет: оценка <b>(1000)</b> выдаст золотой статус!</i>
-                        </div>
-                    </div>
-
-                    
-                    <div class="command-card">
-                        <div class="cmd-name">Пройдено / Посмотрели (Без оценки)</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-text">Название</span> <span class="arg-mod">(смотрели/прошли)</span></div>
-                        <div class="cmd-desc">
-                            Переводит из очереди в «Смотрели/Пройдено» (без оценки).<br>
-                            ⚠️ <i>Если ввести эту команду повторно — заказ вернется обратно в статус «В очереди»!</i>
-                            <br><i>Алиасы: (смотрели), (посмотрели), (watched)</i>
-                            <br><i>Алиасы: (пройдено), (complete), (прошли)</i>
-                        </div>
-                    </div>
-
-                    
-                    <div class="command-card">
-                        <div class="cmd-name">Добавить метку «Слёзы»</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-text">Название</span> <span class="arg-mod">(слёзы)</span></div>
-                        <div class="cmd-desc">
-                            Добавляет метку 💧 для эмоциональных игр/фильмов. Работает только для просмотренных!<br>
-                            <i>Алиасы: (слёзы), (плакал), (cry)</i>
-                            <br>Можно комбинировать: <code>(8.5) (слезы)</code>
-                        </div>
-                    </div>
-
-                    
-                    <div class="command-card">
-                        <div class="cmd-name">Удаление из базы</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-text">Название</span> <span class="arg-mod">(удалить)</span></div>
-                        <div class="cmd-desc">
-                            Полностью и навсегда стирает заказ зрителя из базы.<br>
-                            <i>Алиасы: (удалить), (delete), (del), (убрать)</i>
-                            <br>Если не может найти фильм или игру
-                            <br>то удаляем по нику + ID: <code>!заказ @ник 12 (удалить)</code>
-                        </div>
-                    </div>
-
-                    
                     <div class="command-card">
                         <div class="cmd-name">Замена заказа</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-text">Старое</span> <span class="arg-mod">[Новое]</span></div>
-                        <div class="cmd-desc">
-                            Заменяет текущий заказ на другой (удобно, если зритель передумал). Новое название нужно писать строго в квадратных <b>[ ]</b> или фигурных <b>{ }</b> скобках.<br>
-                            Пример: <code>!заказ Начало [Шрек 2]</code>
+                        <div class="cmd-desc">Заменяет текущий заказ на другой. Новое название строго в <span class="highlight">[квадратных]</span> скобках.</div>
+                        <div class="example-box">
+                            <span class="comment">Пример команды:</span>
+                            !fz Старый Фильм [Новый Фильм]
                         </div>
                     </div>
 
-                    
                     <div class="command-card">
                         <div class="cmd-name">Принудительное обновление сайта</div>
-                        <div class="cmd-syntax">!заказ <span class="arg-mod">(обновить)</span></div>
-                        <div class="cmd-desc">
-                            Если сайт почему-то не обновился автоматически, эта команда заставит бота отправить базу данных еще раз.<br>
-                            <i>Алиасы: (обновить), (update), (refresh)</i>
+                        <div class="cmd-desc">Если сайт завис и не обновился, эта команда отправляет всю базу на сервер заново.</div>
+                        <div class="example-box">
+                            <span class="comment">Пример команды:</span>
+                            !fz (обновить)
                         </div>
+                        <div class="cmd-aliases">Алиасы: (обновить, update, refresh, обн, ref)</div>
                     </div>
 
                 </div>
