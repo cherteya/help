@@ -233,7 +233,6 @@
             <div class="nav-anchors">
                 <a href="#movies">🎬 КИНО (!filmzakaz)</a>
                 <a href="#games">🎮 ИГРЫ (!gamezakaz)</a>
-                <a href="#system">🛠 СИСТЕМНЫЕ</a>
             </div>
 
             
@@ -241,36 +240,44 @@
                 <h2 class="section-title">🎬 Раздел Кино, Мультфильмы, Аниме и Сериалы (!filmzakaz, !fz)</h2>
 
                 <div class="info-box">
-                    <div>⚠️ <b>Важно:</b> Добавлять фильмы могут <b>только модераторы</b> и строго с указанием <span class="highlight-nick">@ника</span> заказчика!</div>
+                    <div>⚠️ <b>Важно:</b> Добавлять фильмы могут <b>только модераторы</b> и строго с указанием <span class="highlight-nick">@ника</span> заказчика! Добавлять можно по названию, ссылке с <b>TMDB</b> или <b>Кинопоиска</b>.</div>
                 </div>
 
                 <h3 class="subsection-title">1. Добавление в очередь</h3>
-                <div class="command-grid">
+				<div class="command-grid">
 
-                    <div class="command-card">
-                        <div class="cmd-name">Ручное добавление (add)</div>
-                        <div class="cmd-desc">Добавить фильм от имени зрителя в обход баллов канала! Указываем <span class="highlight-nick">@ник</span>! Если фильмов с таким названием несколько, <b>обязательно дописываем год</b>!</div>
-                        <div class="example-box">
-							<span class="comment">Обычное добавление:</span>
+					<div class="command-card">
+						<div class="cmd-name">Ручное добавление (add)</div>
+						<div class="cmd-desc">Добавить фильм от имени зрителя в обход баллов канала! Указываем <span class="highlight-nick">@ник</span>! Можно добавлять по названию (с годом или без) или прямыми ссылками. <br><br><span class="note-icon">ℹ️</span> <i>Если парсинг по ссылке <b>Кинопоиска</b> выдает ошибку (часто бывает с аниме), найдите тайтл на <b>themoviedb.org</b> и используйте их ссылку — она работает 100% безотказно!</i></div>
+						<div class="example-box">
+							<span class="comment">По названию (без года):</span>
 							!fz @Зритель Шрек (add)<br><br>
-							<span class="comment">С указанием года (при совпадениях):</span>
-							!fz @Зритель Шрек 2001 (add)
-                        </div>
-                        <div class="cmd-aliases">Алиасы: (заказ, добавить, доб, order, add)</div>
-                    </div>
+							<span class="comment">По названию (с годом при совпадениях):</span>
+							!fz @Зритель Шрек 2001 (add)<br><br>
+							<span class="comment">По ссылке TMDB:</span>
+							!fz @Зритель https://www.themoviedb.org/movie/808 (add)<br><br>
+							<span class="comment">По ссылке Кинопоиска:</span>
+							!fz @Зритель https://www.kinopoisk.ru/film/430/ (add)
+						</div>
+						<div class="cmd-aliases">Алиасы: (заказ, добавить, доб, order, add)</div>
+					</div>
 
-                    <div class="command-card">
-                        <div class="cmd-name">Победа на Аукционе</div>
-                        <div class="cmd-desc">Добавляет фильм в базу с особой пометкой ✦ Аукцион ✦! Если названий несколько, также обязательно дописываем год! <br><br><span class="note-icon">🔄</span> <i>Повторный ввод отменит статус аукциона!</i></div>
-                        <div class="example-box">
-							<span class="comment">Обычное добавление:</span>
-							!fz @Зритель Бойцовский клуб (аукцион)<br><br>
-							<span class="comment">С указанием года:</span>
-							!fz @Зритель Солярис 1972 (аукцион)
-                        </div>
-                        <div class="cmd-aliases">Алиасы: (аукцион, auction, аук)</div>
-                    </div>
-                </div>
+					<div class="command-card">
+						<div class="cmd-name">Победа на Аукционе</div>
+						<div class="cmd-desc">Добавляет фильм в базу с особой пометкой ✦ Аукцион ✦! Поддерживает название (с годом или без) или ссылки TMDB/Кинопоиск. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод отменит статус аукциона!</i></div>
+						<div class="example-box">
+							<span class="comment">По названию (без года):</span>
+							!fz @Зритель Бойцовский клуб (аук)<br><br>
+							<span class="comment">По названию (с годом при совпадениях):</span>
+							!fz @Зритель Солярис 1972 (аук)<br><br>
+							<span class="comment">По ссылке TMDB:</span>
+							!fz @Зритель https://www.themoviedb.org/movie/550 (аук)<br><br>
+							<span class="comment">По ссылке Кинопоиска:</span>
+							!fz @Зритель https://www.kinopoisk.ru/film/361/ (аук)
+						</div>
+						<div class="cmd-aliases">Алиасы: (аукцион, auction, аук)</div>
+					</div>
+				</div>
 
                 <h3 class="subsection-title">2. Управление Статусами</h3>
                 <div class="command-grid">
@@ -279,8 +286,8 @@
                         <div class="cmd-name">Статус: В процессе</div>
                         <div class="cmd-desc">Устанавливает статус фильма на «Смотрим».</div>
                         <div class="example-box">
-							<span class="comment">Пример команды:</span>
-							!fz Шрек (смотрим)
+                            <span class="comment">Пример команды:</span>
+                            !fz Шрек (смотрим)
                         </div>
                         <div class="cmd-aliases">Алиасы: (смотрим, watching)</div>
                     </div>
@@ -289,8 +296,8 @@
                         <div class="cmd-name">Статус: Просмотрено (Без оценки)</div>
                         <div class="cmd-desc">Закрывает заказ и переносит в архив. Если ввести еще раз — вернет в очередь.</div>
                         <div class="example-box">
-							<span class="comment">Пример команды:</span>
-							!fz Шрек (смотрели)
+                            <span class="comment">Пример команды:</span>
+                            !fz Шрек (смотрели)
                         </div>
                         <div class="cmd-aliases">Алиасы: (смотрели, watched, смотрел, смотрела)</div>
                     </div>
@@ -299,10 +306,10 @@
                         <div class="cmd-name">Статус: Оценка и Золото</div>
                         <div class="cmd-desc">Закрывает заказ с выставлением оценки (цифрами). Оценка <b>(1000)</b> выдает Золотой Статус.</div>
                         <div class="example-box">
-							<span class="comment">Обычная оценка:</span>
-							!fz Шрек (8.5)<br><br>
-							<span class="comment">Золотой статус:</span>
-							!fz Шрек (1000)
+                            <span class="comment">Обычная оценка:</span>
+                            !fz Шрек (8.5)<br><br>
+                            <span class="comment">Золотой статус:</span>
+                            !fz Шрек (1000)
                         </div>
                     </div>
                 </div>
@@ -314,30 +321,48 @@
                         <div class="cmd-name">Добавить Постер</div>
                         <div class="cmd-desc">Привязывает свою картинку/обложку к заказу. Ссылка пишется внутри скобок через пробел. <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(постер)</b> без ссылки, свой постер будет удален!</i></div>
                         <div class="example-box">
-							<span class="comment">Пример команды:</span>
-							!fz Шрек (постер https://ссылка.jpg)
+                            <span class="comment">Пример команды:</span>
+                            !fz Шрек (постер https://ссылка.jpg)
                         </div>
                         <div class="cmd-aliases">Алиасы: (постер, poster, картинка, обложка)</div>
                     </div>
 
                     <div class="command-card">
                         <div class="cmd-name">Добавить пост Telegram</div>
-                        <div class="cmd-desc">Привязывает пост с отзывом/анонсом в вашем ТГ. <b>Указываем только номер поста</b>, не ссылку! <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(тг)</b> без номера, привязка поста будет удалена!</i></div>
+                        <div class="cmd-desc">Привязывает пост с отзывом/анонсом в вашем ТГ. Можно указывать <b>как номер поста, так и полную ссылку</b>. <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(тг)</b> без номера или ссылки, привязка будет удалена!</i></div>
                         <div class="example-box">
-							<span class="comment">Пример (если ссылка t.me/канал/122):</span>
-							!fz Шрек (тг 122)
+                            <span class="comment">По номеру поста:</span>
+                            !fz Шрек (тг 122)<br><br>
+                            <span class="comment">По полной ссылке:</span>
+                            !fz Шрек (тг https://t.me/sarachuma/122)
                         </div>
                         <div class="cmd-aliases">Алиасы: (пост, post, tg, тг)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Многосерийные записи (Части 1, 2, 3...)</div>
+                        <div class="cmd-desc">Если прохождение/просмотр занял несколько стримов, добавляйте записи с помощью цифр. Можно использовать <b>полные ссылки или номера постов</b>. Первая часть пишется как обычно, остальные — с цифрой без пробела. <br><br><span class="delete-icon">🗑️</span> <i>Чтобы удалить конкретную часть, напишите алиас с цифрой без ссылки.</i></div>
+                        <div class="example-box">
+                            <span class="comment">Первая часть (по номеру или ссылке):</span>
+                            !fz Шрек (тгзапись 122)<br>
+                            !fz Шрек (ютуб https://...)<br><br>
+                            <span class="comment">Вторая и третья части:</span>
+                            !fz Шрек (тгзапись2 123)<br>
+                            !fz Шрек (ютуб3 https://...)<br><br>
+                            <span class="comment">Удалить вторую часть ТГ:</span>
+                            !fz Шрек (тгзапись2)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (тгзапись, бусти, ютуб) + цифра</div>
                     </div>
 
                     <div class="command-card">
                         <div class="cmd-name">Привязка Кинопоиска (Для кнопки)</div>
                         <div class="cmd-desc">Добавляет на сайт кнопку «Смотреть онлайн», если она не появилась. Можно указать ID или полную ссылку.</div>
                         <div class="example-box">
-							<span class="comment">По ID Кинопоиска:</span>
-							!fz Шрек (кп 430)<br><br>
-							<span class="comment">По ссылке:</span>
-							!fz Шрек (кп https://www.kinopoisk.ru/...)
+                            <span class="comment">По ID Кинопоиска:</span>
+                            !fz Шрек (кп 430)<br><br>
+                            <span class="comment">По ссылке:</span>
+                            !fz Шрек (кп https://www.kinopoisk.ru/...)
                         </div>
                         <div class="cmd-aliases">Алиасы: (кинопоиск, kinopoisk, kp, кп)</div>
                     </div>
@@ -346,8 +371,8 @@
                         <div class="cmd-name">Включить/Выключить «Смотреть онлайн»</div>
                         <div class="cmd-desc">Команда, которая переключает отображение кнопок «Смотреть онлайн» для зрителей на сайте.</div>
                         <div class="example-box">
-							<span class="comment">Переключатель:</span>
-							!fz (онлайн)
+                            <span class="comment">Переключатель:</span>
+                            !fz (онлайн)
                         </div>
                         <div class="cmd-aliases">Алиасы: (online, онлайн)</div>
                     </div>
@@ -383,6 +408,24 @@
                         <div class="example-box">!fz Во все тяжкие (сезон 2)</div>
                         <div class="cmd-aliases">Алиасы: (сезон, season, s, с)</div>
                     </div>
+					
+					
+					<div class="command-card">
+                        <div class="cmd-name">Учет серий 🎬 (Для сериалов)</div>
+                        <div class="cmd-desc">Позволяет устанавливать, прибавлять или отнимать количество просмотренных серий. Если у сериала еще не указан сезон, он <b>автоматически установится на 1-й</b>. <br><br><span class="note-icon">🔄</span> <i>Если написать просто <b>(серии)</b> без цифр и знаков, счетчик обнулится!</i></div>
+                        <div class="example-box">
+                            <span class="comment">Установить точное число:</span>
+                            !fz Во все тяжкие (5 серий)<br><br>
+                            <span class="comment">Прибавить серии к текущим:</span>
+                            !fz Во все тяжкие (+2 серии)<br><br>
+                            <span class="comment">Отнять серии:</span>
+                            !fz Во все тяжкие (-1 серия)<br><br>
+                            <span class="comment">Сбросить счетчик (обнулить):</span>
+                            !fz Во все тяжкие (серии)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (серия, серии, серию, эп, ep)</div>
+                    </div>
+					
                     
                     <div class="command-card">
                         <div class="cmd-name">Метка: Бан на платформе 🚫</div>
@@ -392,15 +435,57 @@
                     </div>
                 </div>
 
-                <h3 class="subsection-title">5. Технические Команды Кино</h3>
+                <h3 class="subsection-title">5. Форматы Редактирования</h3>
                 <div class="command-grid">
                     <div class="command-card">
+                        <div class="cmd-name">Универсальное применение меток</div>
+                        <div class="cmd-desc">Любой фильм можно редактировать (менять статус, ставить оценки, добавлять постер/тг) <b>любым удобным способом</b>: по названию или отправив прямую ссылку на TMDB/Кинопоиск.</div>
+                        <div class="example-box">
+                            <span class="comment">Редактирование по названию:</span>
+                            !fz Шрек (постер https://...)<br><br>
+                            <span class="comment">Редактирование по ссылке:</span>
+                            !fz https://www.themoviedb.org/movie/808 (постер https://...)
+                        </div>
+                    </div>
+                    <div class="command-card">
                         <div class="cmd-name">Обновление данных фильма</div>
-                        <div class="cmd-desc">Заставляет бота заново стянуть обложку и инфу из интернета для конкретного фильма.</div>
-                        <div class="example-box">!fz Шрек (data)</div>
+                        <div class="cmd-desc">Заставляет бота заново стянуть обложку и инфу из интернета для конкретного фильма. Работает с названием и ссылкой.</div>
+                        <div class="example-box">!fz https://www.themoviedb.org/movie/808 (data)</div>
                         <div class="cmd-aliases">Алиасы: (data, дата, обновитьфильм)</div>
                     </div>
                 </div>
+
+                <h3 class="subsection-title">6. Системные Команды Кино</h3>
+                <div class="command-grid">
+                    <div class="command-card">
+                        <div class="cmd-name">Полное Удаление</div>
+                        <div class="cmd-desc">Навсегда удаляет заказ из базы. Если бот не может найти фильм по названию, используйте ник зрителя и ID заказа.</div>
+                        <div class="example-box">
+                            <span class="comment">Удаление по названию/ссылке:</span>
+                            !fz Плохой Фильм (удалить)<br><br>
+                            <span class="comment">Удаление по нику и ID заказа:</span>
+                            !fz @Зритель 12 (удалить)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (удалить, delete, del, убрать, отмена)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Замена заказа</div>
+                        <div class="cmd-desc">Заменяет текущий заказ на другой. Новое название строго в <span class="highlight">[квадратных]</span> скобках.</div>
+                        <div class="example-box">
+                            <span class="comment">Пример команды:</span>
+                            !fz Старый Фильм [Новый Фильм]
+                        </div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Принудительное обновление сайта</div>
+                        <div class="cmd-desc">Если сайт завис и не обновился, эта команда отправляет всю базу на сервер заново.</div>
+                        <div class="example-box">!fz (обновить)</div>
+                        <div class="cmd-aliases">Алиасы: (обновить, update, refresh, обн, ref)</div>
+                    </div>
+                </div>
+
             </div>
 
             
@@ -418,12 +503,12 @@
                         <div class="cmd-name">Ручное добавление (add)</div>
                         <div class="cmd-desc">Модератор добавляет игру в обход баллов канала. Обязательно указываем <span class="highlight-nick">@ник</span>. Игру можно добавить тремя способами: названием, ссылкой на Steam или Steam ID.</div>
                         <div class="example-box">
-							<span class="comment">Названием:</span>
-							!gz @Зритель Portal (add)<br><br>
-							<span class="comment">Ссылкой на Steam:</span>
-							!gz @Зритель https://store.steampowered.com/app/400/ (add)<br><br>
-							<span class="comment">По Steam ID:</span>
-							!gz @Зритель steam400 (add)
+                            <span class="comment">Названием:</span>
+                            !gz @Зритель Portal (add)<br><br>
+                            <span class="comment">Ссылкой на Steam:</span>
+                            !gz @Зритель https://store.steampowered.com/app/400/ (add)<br><br>
+                            <span class="comment">По Steam ID:</span>
+                            !gz @Зритель steam400 (add)
                         </div>
                         <div class="cmd-aliases">Алиасы: (заказ, добавить, доб, order, add)</div>
                     </div>
@@ -432,12 +517,12 @@
                         <div class="cmd-name">Победа на Аукционе</div>
                         <div class="cmd-desc">Добавляет игру в базу со статусом победителя ✦ Аукцион ✦. Обязательно указываем <span class="highlight-nick">@ник</span>. Поддерживает название, ссылку и Steam ID. <br><br><span class="note-icon">🔄</span> <i>Повторный ввод отменит статус аукциона.</i></div>
                         <div class="example-box">
-							<span class="comment">Названием:</span>
-							!gz @Зритель Dark Souls (аукцион)<br><br>
-							<span class="comment">Ссылкой на Steam:</span>
-							!gz @Зритель https://store.steampowered.com/app/374320/ (аукцион)<br><br>
-							<span class="comment">По Steam ID:</span>
-							!gz @Зритель steam374320 (аукцион)
+                            <span class="comment">Названием:</span>
+                            !gz @Зритель Dark Souls (аукцион)<br><br>
+                            <span class="comment">Ссылкой на Steam:</span>
+                            !gz @Зритель https://store.steampowered.com/app/374320/ (аукцион)<br><br>
+                            <span class="comment">По Steam ID:</span>
+                            !gz @Зритель steam374320 (аукцион)
                         </div>
                         <div class="cmd-aliases">Алиасы: (аукцион, auction, аук)</div>
                     </div>
@@ -520,89 +605,90 @@
 
                     <div class="command-card">
                         <div class="cmd-name">Добавить пост Telegram</div>
-                        <div class="cmd-desc">Привязка поста с анонсом. <b>Указываем только номер поста</b>. <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(тг)</b> без номера, привязка поста будет удалена!</i></div>
-                        <div class="example-box">!gz Portal (тг 122)</div>
+                        <div class="cmd-desc">Привязывает пост с анонсом в вашем ТГ. Можно указывать <b>как номер поста, так и полную ссылку</b>. <br><br><span class="delete-icon">🗑️</span> <i>Если написать просто <b>(тг)</b> без номера или ссылки, привязка будет удалена!</i></div>
+                        <div class="example-box">
+                            <span class="comment">По номеру поста:</span>
+                            !gz Portal (тг 122)<br><br>
+                            <span class="comment">По полной ссылке:</span>
+                            !gz Portal (тг https://t.me/sarachuma/122)
+                        </div>
                         <div class="cmd-aliases">Алиасы: (пост, post, tg, тг)</div>
+                    </div>
+
+                    <div class="command-card">
+                        <div class="cmd-name">Многосерийные записи (Части 1, 2, 3...)</div>
+                        <div class="cmd-desc">Если прохождение заняло несколько стримов, добавляйте записи с помощью цифр. Можно использовать <b>полные ссылки или номера постов</b>. Первая часть пишется как обычно, остальные — с цифрой без пробела. <br><br><span class="delete-icon">🗑️</span> <i>Чтобы удалить конкретную часть, напишите алиас с цифрой без ссылки.</i></div>
+                        <div class="example-box">
+                            <span class="comment">Первая часть (по номеру или ссылке):</span>
+                            !gz Portal (тгзапись 122)<br>
+                            !gz Portal (ютуб https://...)<br><br>
+                            <span class="comment">Вторая и третья части:</span>
+                            !gz Portal (тгзапись2 123)<br>
+                            !gz Portal (ютуб3 https://...)<br><br>
+                            <span class="comment">Удалить вторую часть ТГ:</span>
+                            !gz Portal (тгзапись2)
+                        </div>
+                        <div class="cmd-aliases">Алиасы: (тгзапись, бусти, ютуб) + цифра</div>
                     </div>
                 </div>
 
-                <h3 class="subsection-title">5. Технические Команды Игр</h3>
+                <h3 class="subsection-title">5. Форматы Редактирования</h3>
                 <div class="command-grid">
                     <div class="command-card">
-                        <div class="cmd-name">Форматы Редактирования (Название, Ссылка, ID)</div>
-                        <div class="cmd-desc">Любую игру можно редактировать (менять статус, добавлять постер/тг) тремя способами: по названию, по ссылке на Steam или по Steam ID. ID пишется слитно с префиксом.</div>
+                        <div class="cmd-name">Универсальное применение меток</div>
+                        <div class="cmd-desc">Любую игру можно редактировать (менять статус, добавлять метки и медиа) <b>любым удобным способом</b>: по названию, по ссылке на Steam или по Steam ID. ID пишется слитно с префиксом.</div>
                         <div class="example-box">
-							<span class="comment">По названию:</span>
-							!gz Portal (постер https://...)<br><br>
-							<span class="comment">По ссылке:</span>
-							!gz https://store.steampowered.com/app/400/ (постер https://...)<br><br>
-							<span class="comment">По Steam ID:</span>
-							!gz steam400 (постер https://...)
+                            <span class="comment">По названию:</span>
+                            !gz Portal (постер https://...)<br><br>
+                            <span class="comment">По ссылке:</span>
+                            !gz https://store.steampowered.com/app/400/ (постер https://...)<br><br>
+                            <span class="comment">По Steam ID:</span>
+                            !gz steam400 (постер https://...)
                         </div>
                         <div class="cmd-aliases">Префиксы для ID: steam, id, стим (например: id400)</div>
                     </div>
                     <div class="command-card">
                         <div class="cmd-name">Обновление данных игры</div>
-                        <div class="cmd-desc">Заново стянуть обложку и данные по игре из базы.</div>
-                        
+                        <div class="cmd-desc">Заново стянуть обложку и данные по игре из базы. Поддерживает названия, ссылки и Steam ID.</div>
                         <div class="example-box">
-							<span class="comment">По названию:</span>
-							!gz Portal (data)<br><br>
-							<span class="comment">По ссылке:</span>
-							!gz https://store.steampowered.com/app/400/ (data)<br><br>
-							<span class="comment">По Steam ID:</span>
-							!gz steam400 (data)
+                            !gz Portal (data)<br><br>
+                            !gz steam400 (data)
                         </div>
-                        
                         <div class="cmd-aliases">Алиасы: (data, дата, обновитьигру)</div>
                     </div>
                 </div>
-            </div>
 
-            
-            <div id="system" class="section">
-                <h2 class="section-title">🛠 Системная Магия (Общие Команды)</h2>
+                <h3 class="subsection-title">6. Системные Команды Игр</h3>
                 <div class="command-grid">
-                    
                     <div class="command-card">
-                        <div class="cmd-name">Полное Удаление (По названию)</div>
-                        <div class="cmd-desc">Навсегда удаляет заказ из базы. Подходит для !fz и !gz.</div>
+                        <div class="cmd-name">Полное Удаление</div>
+                        <div class="cmd-desc">Навсегда удаляет заказ из базы. Если бот не может найти игру по названию, используйте ник зрителя и ID заказа.</div>
                         <div class="example-box">
-							<span class="comment">Пример команды:</span>
-							!fz Плохой Фильм (удалить)
+                            <span class="comment">Удаление по названию/ссылке:</span>
+                            !gz Плохая Игра (удалить)<br><br>
+                            <span class="comment">Удаление по нику и ID заказа:</span>
+                            !gz @Зритель 12 (удалить)
                         </div>
                         <div class="cmd-aliases">Алиасы: (удалить, delete, del, убрать, отмена)</div>
-                    </div>
-
-                    <div class="command-card">
-                        <div class="cmd-name">Удаление (По нику + ID)</div>
-                        <div class="cmd-desc">Если бот не может найти название, используйте ник зрителя и ID заказа.</div>
-                        <div class="example-box">
-							<span class="comment">Пример команды:</span>
-							!fz @Зритель 12 (удалить)
-                        </div>
                     </div>
 
                     <div class="command-card">
                         <div class="cmd-name">Замена заказа</div>
                         <div class="cmd-desc">Заменяет текущий заказ на другой. Новое название строго в <span class="highlight">[квадратных]</span> скобках.</div>
                         <div class="example-box">
-							<span class="comment">Пример команды:</span>
-							!fz Старый Фильм [Новый Фильм]
+                            <span class="comment">Пример команды:</span>
+                            !gz Старая Игра [Новая Игра]
                         </div>
                     </div>
 
                     <div class="command-card">
                         <div class="cmd-name">Принудительное обновление сайта</div>
                         <div class="cmd-desc">Если сайт завис и не обновился, эта команда отправляет всю базу на сервер заново.</div>
-                        <div class="example-box">
-							<span class="comment">Пример команды:</span>
-							!fz (обновить)
-                        </div>
+                        <div class="example-box">!gz (обновить)</div>
                         <div class="cmd-aliases">Алиасы: (обновить, update, refresh, обн, ref)</div>
                     </div>
-
                 </div>
+
             </div>
 
         </div>
